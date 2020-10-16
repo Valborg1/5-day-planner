@@ -16,13 +16,38 @@ $("button.saveBtn").on("click", function() {
 
 
 // Set Time Text from Local Storage
-for (var i = 8; i < 17; i++) {
-    var timeText = localStorage.getItem("hour" + [i]);
-    $("#hour" + [i]).val(timeText);
+for (var i = 8; i < 23; i++) {
+    var timeText = localStorage.getItem([i]);
+    $("#" + [i]).val(timeText);
 }
 
-
 // Set Time Text Background Based on Current Time
+var time = moment().format('HH');
+console.log(time);
 
+function setColors() {
+    for (var j = 8; j < 23; j++) {
+    var ID = ($("#"+[j]).attr("id"))
+    ID = Number(ID);
+
+    console.log(ID);
+    if (ID < time) {
+        $("#" + [j]).addClass("past");
+    } else if (ID > time) {
+        $("#" + [j]).addClass("future");
+    } else if (ID = time) {
+        $("#" + [j]).addClass("present");
+    } else {
+        console.log("huh?");
+    }
+  }
+}
+
+setColors();
+
+// Update Colors every minute
+setInterval(function() {
+    setColors();
+}, 60 * 1000); 
 
 });

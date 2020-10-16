@@ -28,6 +28,7 @@ body {
   .time-block{
     text-align: center;
     border-radius: 15px;
+    margin: 3px;
   }
   
   .row {
@@ -65,8 +66,13 @@ body {
     color: white;
   }
   
+  i {
+    font-size: 30px;
+  }
+
   .saveBtn i:hover {
-    font-size: 20px;
+    font-size: 35px;
     transition: all .3s ease-in-out;
+    color: black;
   }
   
