@@ -19,7 +19,6 @@ function setDate() {
 
 setDate();
 
-
 // Set Local Storage when Save is Clicked
 $("button.saveBtn").on("click", function() {
     var timeText = $(this).siblings("textarea.description").val();
@@ -53,9 +52,7 @@ function setColors() {
         $("#" + [j]).addClass("future");
     } else if (ID = time) {
         $("#" + [j]).addClass("present");
-    } else {
-        console.log("Not Working");
-    }
+    } 
   }
 }
 
